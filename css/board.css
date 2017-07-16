@@ -16,10 +16,17 @@
 .cell {
 	border: 1px black solid;
 	text-align:center;
+	font-size: 16px;
 }
 
 .cell span {
 	line-height: 100px;
+}
+
+.message-container {
+	color: red;
+	margin: auto;
+	min-height: 40px;
 }
 
 #restart-button {
