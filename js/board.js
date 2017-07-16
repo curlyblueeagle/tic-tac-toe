@@ -48,6 +48,7 @@ class BoardView {
 		this._board = document.querySelector(".board");
 		this._cells = this._board.querySelectorAll(".cell");
 		this._restartButton = document.getElementById('restart-button');
+		this._messageContainer = document.querySelector(".message-container");
 	}	
 
 	initialize() {		
@@ -56,7 +57,7 @@ class BoardView {
 	}
 	
 	displayMessage(msg) {
-		alert(msg);
+		this._messageContainer.innerHTML = msg;
 	}
 	
 	getIndex(element) {
@@ -75,6 +76,7 @@ class BoardView {
 		for (let i = 0; i < cellsCount; i++) {
 			this._cells[i].innerHTML = "";
 		}
+		this._messageContainer.innerHTML = "";
 	}
 }
 
