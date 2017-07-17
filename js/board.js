@@ -1,5 +1,5 @@
 /**
- * What should board's model do?
+ * The board's model does the following:
  * - Intialize the game state to be ["", "", "", "", "", "", "", "", ""]
  * - Initialize the current move to "O" so the first move in the game will be "X"
  * - Maintain the state of the game as follows:
@@ -37,10 +37,8 @@
 }
 
 /**
- * What should board's view do?
- * - It should update given cell's DOM element based on whether the value is "X", "O" or "". In curent implementation of view, this means
- *   that it should inject a span tag with the value as content
- * 
+ * The Board's view should update given cell's DOM element based on whether the current move is a "X", "O" or "". 
+ * In curent implementation of view, this entails injecting a span tag with the value as content * 
  */
 class BoardView {
 	//Just save a reference of all the necessary DOM elements so that they can be reused later.
@@ -67,10 +65,13 @@ class BoardView {
 	setCellElementContent(element, value, isBoardFull=false) {
 		element.innerHTML = "<span>" + value + "</span>";
 		if (isBoardFull) {
-			this.displayMessage("Game Over! Please click RESTART to begin a new game");
+			this.displayMessage("Game Over! Please click RESTART GAME to begin a new game");
 		}
 	}
 	
+	/**
+	 * Clear the contents of all the cells and the message
+	 */
 	resetBoard() {
 		var cellsCount = this._cells.length;
 		for (let i = 0; i < cellsCount; i++) {
@@ -81,7 +82,7 @@ class BoardView {
 }
 
 /**
- * 
+ * Supply event DOM event handlers and pass on data from model to view
  */
 class BoardController {
 	constructor(view, model) {
