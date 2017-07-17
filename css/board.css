@@ -1,10 +1,13 @@
 .board {
 	display: grid;
+	display: -ms-grid;
 	margin: 5% auto;
 	height: 300px;
 	width: 300px;
 	grid-template-columns: repeat(3, 1fr);
 	grid-auto-rows: 33%;
+	-ms-grid-columns: (1fr)[3];
+	-ms-grid-rows: (1fr)[3];
 }
 
 .container {
@@ -16,7 +19,47 @@
 .cell {
 	border: 1px black solid;
 	text-align:center;
-	font-size: 16px;
+	font-size: 36px;
+}
+
+.cell[data-index='1'] {
+	-ms-grid-row: 1;
+    -ms-grid-column: 2;
+}
+
+.cell[data-index='2'] {
+	-ms-grid-row: 1;
+    -ms-grid-column: 3;
+}
+
+.cell[data-index='3'] {
+	-ms-grid-row: 2;
+    -ms-grid-column: 1;
+}
+
+.cell[data-index='4'] {
+	-ms-grid-row: 2;
+    -ms-grid-column: 2;
+}
+
+.cell[data-index='5'] {
+	-ms-grid-row: 2;
+    -ms-grid-column: 3;
+}
+
+.cell[data-index='6'] {
+	-ms-grid-row: 3;
+    -ms-grid-column: 1;
+}
+
+.cell[data-index='7'] {
+	-ms-grid-row: 3;
+    -ms-grid-column: 2;
+}
+
+.cell[data-index='8'] {
+	-ms-grid-row: 3;
+    -ms-grid-column: 3;
 }
 
 .cell span {
